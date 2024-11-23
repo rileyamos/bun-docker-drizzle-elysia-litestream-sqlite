@@ -1,0 +1,6 @@
+dbs:
+  - path: /database/sqlite.db
+    replicas:
+      - type: s3
+        bucket: your-bucket-name
+        endpoint: https://<your-account-id>.r2.cloudflarestorage.com/

@@ -1,0 +1,25 @@
+services:
+  app-container:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - database:/app/database
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3000
+      - DATABASE_PATH=/app/database/sqlite.db
+
+  litestream-container:
+    image: litestream/litestream:latest
+    tty: true
+    volumes:
+      - database:/database
+      - ./litestream.yml:/etc/litestream.yml
+    command: replicate -config /etc/litestream.yml
+
+# Shared volumes
+volumes:
+  database:
