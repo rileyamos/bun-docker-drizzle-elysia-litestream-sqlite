@@ -23,6 +23,14 @@ bun ./dev/scripts/setup.sh
 
 The app will fail to startup until you setup your own schema in `src/lib/db/schema.ts`. There is a demo script provided that will generate demo data for you should you need it.
 
+If you don't want to setup the demo, proceed to configure your schema. Then run:
+
+```bash
+bunx drizzle-kit generate
+```
+
+### Use Demo Data
+
 To seed the database with demo data, run the following command one time:
 
 ```bash
