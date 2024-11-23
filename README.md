@@ -27,6 +27,7 @@ If you don't want to setup the demo, proceed to configure your schema. Then run:
 
 ```bash
 bunx drizzle-kit generate
+bunx drizzle-kit migrate
 ```
 
 ### Use Demo Data
